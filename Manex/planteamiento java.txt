@@ -1,0 +1,9 @@
+crear la clase vehiculo y sus subclases coche y camiones. 
+establecer los atributos de cada clase.
+conectar con la tabla de la base de datos.
+mostrar vehiculos disponibles.
+mostrar historico.
+poder insertar, borrar o modificar vehiculos.
+filtrar por color.
+gestion de ventas y pintado de vehiculos.
+tras una adquisicion o venta, resumen de los datos para confirmar.
