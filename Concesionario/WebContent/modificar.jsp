@@ -37,7 +37,7 @@ out.println("<style>  a,b {font-family: arial;"
 String strId =request.getParameter("id");
 int id = Integer.parseInt(strId);
 Connection con = null;
-String url = "jdbc:mysql://localhost:3306/";;
+String url = "jdbc:mysql://10.18.124.90:3306/";;
 String db = "users";
 String driver = "com.mysql.jdbc.Driver";
 try{
