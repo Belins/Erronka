@@ -1,6 +1,6 @@
-<%-- delete.java
+<%-- update.java
      Written By: Mr. Jake R. Pomperada, MAED-IT
-     Date : July 17, 2015, Friday
+     Date : July 17, 2015
      Tools: JSP and MySQL
             mysql-connecter-java-5.1.13-bin.jar
             netbeans ide 8.0.2
@@ -16,23 +16,26 @@ out.println("<style>  a,b {font-family: arial;"
            + "</style>");
 
 %>
-
 <% 
 String strId =request.getParameter("id");
 int id = Integer.parseInt(strId);
 Connection con = null;
-String url = "jdbc:mysql://10.18.124.90:3306/";;
+String url = "jdbc:mysql://localhost:3306/";;
 String db = "users";
 String driver = "com.mysql.jdbc.Driver";
 try{
 Class.forName(driver);
-con = DriverManager.getConnection(url+db,"root","david1234");
+con = DriverManager.getConnection(url+db,"root","");
 try{
 Statement st = con.createStatement();
 String name=request.getParameter("name");
-int in = st.executeUpdate("DELETE FROM student_info WHERE id='"+id+"'");
+String city=request.getParameter("city");
+String phone=request.getParameter("phone");
+int in = st.executeUpdate("UPDATE student_info SET name='"+name+"'"
+                          + ",city='"+city+"',phone='"+phone+"' "
+                          + "WHERE id='"+id+"'");
 con.close();
-out.println("<p> The record is successfully deleted. </p>");
+out.println("<p> The record of " +"<b>"+ name +"</b>" + " is successfully updated. </p>");
 out.println("<br>");
 out.println("<a href='list.jsp'> RETURN TO MAIN PAGE </a>");
 }
@@ -44,3 +47,4 @@ catch (Exception e){
 e.printStackTrace();
 }
 %>
+

@@ -1,67 +1,73 @@
-<%-- insert.java
-     Written By: Mr. Jake R. Pomperada, MAED-IT
-     Date : July 17, 2015, Friday
-     Tools: JSP and MySQL
-            mysql-connecter-java-5.1.13-bin.jar
-            netbeans ide 8.0.2
+<%-- JSP para añadir vehiculos al concesionario.
+		Hecho por:
+		Manex Arroitaonandia, David Belinchon y Aitor Ortiz de Zarate
 --%>
 <%@ page language="java" import="java.sql.*,java.util.*,java.text.*" %>
 
 <html>
 <head>
-<title>Añadir Candidato </title>
+<title>Añadir  </title>
 </head>
 <body>
 <style>
-    table, td, th {
-    border: 1px solid black;
-    font-family: arial;
-	color: black;
-}
-
-table {
-    background-color: orange;
+    body {
+ 		background-image: url("ruedas.jpg");
+ 		background-repeat: no-repeat;
+ 		background-size: 100% 100%;
+	}
+	table {
+		margin: auto;
+   		background-color: lightgrey;
    }
+   	td{
+   		width:50%;
+   	}
 </style>
-<%
-out.println("<style>  p {font-family: arial;"
-           + " color: red; font-size: 16;   }; "
-           + "</style>");
-out.println("<style>  a,b {font-family: arial;"
-           + " color: blue; font-size: 16;   }; "
-           + "</style>");
 
-%>
 
-<table border="1" width="70%">
+<table border="1" width="50%">
 <tr>
-<td width="100%">
-<form method="POST" action="save.jsp">
+<td>
+<form method="POST" action="guardar.jsp">
 
-<h2 align="center">Añadir candidato</h2>
-<table border="1" width="100%">
+<h2 align="center">AÑADIR VEHICULO</h2>
+<table  width="15%">
 <tr>
-<td width="50%"><b>Nombre:</b></td>
-<td width="50%"><input type="text" name="name" size="50"/> </td>
+<td><b>Matricula:</b></td>
+<td><input type="text" name="Matricula" size="50"/> </td>
 </tr>
 <tr>
-<td width="50%"><b>Grupo:</b></td>
-<td width="50%"><input type="text" name="city" size="50"></td>
+<td><b>Bastidor:</b></td>
+<td><input type="text" name="NumBastidor" size="50"></td>
 </tr>
 <tr>
-<td width="50%"><b>Vehiculo:</b></td>
-<td width="50%"><input type="text" name="telephone" size="15"></td>
+<td><b>Color:</b></td>
+<td><input type="text" name="Color" size="50"></td>
+</tr>
+<tr>
+<td><b>NumAsientos:</b></td>
+<td><input type="text" name="NumAsientos" size="50"></td>
+</tr>
+<tr>
+<td><b>Precio:</b></td>
+<td><input type="text" name="Precio" size="50"></td>
+</tr>
+<tr>
+<td><b>NumSerie:</b></td>
+<td><input type="text" name="NumSerie" size="50"></td>
 </tr>
 </table>
-<p><input type="submit" value="Añadir" name="Submit">
-<input type="reset" value="Restablecer" name="Reset"></p>
+<p align="center"><input type="submit" value="Añadir" name="Submit">
+<input type="reset" value="Restablecer" name="Reset">
 </form>
+<form method="get" action="principal.jsp">
+<input type="submit" value="Volver" />
+</form>
+</p>
 </td>
 </tr>
 </table>
-<% out.println("<br>");
-out.println("<a href='list.jsp'> Volver </a>");
-%>
+
 
 </body>
 </html>
