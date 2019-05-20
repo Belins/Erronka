@@ -30,7 +30,7 @@ CREATE TABLE Serie
  
  CREATE TABLE Coche
  (
-	 CodVehiculo 		integer(10) NOT NULL ,
+	 CodVehiculo 		integer(10) NOT NULL auto_increment ,
      numPuertas			integer(1),
      capacidadMaletero	integer(4),
      PRIMARY KEY (CodVehiculo),
@@ -41,7 +41,7 @@ CREATE TABLE Serie
  
   CREATE TABLE Camion
  (
-	 CodVehiculo 		integer(10) NOT NULL ,
+	 CodVehiculo 		integer(10) NOT NULL auto_increment,
      carga				integer(5),
      tipoMercancia		ENUM('G','A','P'),
      PRIMARY KEY (CodVehiculo),
@@ -49,6 +49,15 @@ CREATE TABLE Serie
      ON DELETE CASCADE ON UPDATE CASCADE
  
  ) ;
+ 
+ CREATE TABLE Historico
+ (
+	CodVehiculo		integer(10) NOT NULL auto_increment,
+	Estado			ENUM('Comprado', 'Pintado', 'Vendido'),
+    PRIMARY KEY (CodVehiculo),
+    FOREIGN KEY (CodVehiculo) REFERENCES Vehiculo(CodVehiculo)
+     ON DELETE CASCADE ON UPDATE CASCADE
+ );
  
 
 -- Insertar datos
@@ -82,5 +91,33 @@ INSERT INTO Vehiculos VALUES ("0358 XDX", "ZFFXC26A0H0003270", "Blanco", 3, 1400
 INSERT INTO Vehiculos VALUES ("3856 SBD", "KM8SC73D35U810516", "Negro", 4, 20000, 114);
 INSERT INTO Vehiculos VALUES ("0478 VNI", "4V4MC9GF47N419977", "Blanco", 5, 18000, 113);
 
+INSERT INTO Coche VALUES (3, 500);
+INSERT INTO Coche VALUES (3, 800);
+INSERT INTO Coche VALUES (3, 700);
+INSERT INTO Coche VALUES (3, 600);
+INSERT INTO Coche VALUES (3, 400);
+INSERT INTO Coche VALUES (5, 550);
+INSERT INTO Coche VALUES (3, 500);
+INSERT INTO Coche VALUES (3, 700);
+INSERT INTO Coche VALUES (5, 1000);
+
+INSERT INTO Camion VALUES (18000, "G");
+INSERT INTO Coche VALUES (15000, "P");
+INSERT INTO Coche VALUES (23000, "A");
+INSERT INTO Coche VALUES (16500, "P");
+
+INSERT INTO Historico VALUES ("Comprado");
+INSERT INTO Historico VALUES ("Pintado");
+INSERT INTO Historico VALUES ("Vendido");
+INSERT INTO Historico VALUES ("Vendido");
+INSERT INTO Historico VALUES ("Comprado");
+INSERT INTO Historico VALUES ("Pintado");
+INSERT INTO Historico VALUES ("Comprado");
+INSERT INTO Historico VALUES ("Comprado");
+INSERT INTO Historico VALUES ("Vendido");
+INSERT INTO Historico VALUES ("Comprado");
+INSERT INTO Historico VALUES ("Pintado");
+INSERT INTO Historico VALUES ("Comprado");
+INSERT INTO Historico VALUES ("Pintado");
 
 
