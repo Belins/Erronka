@@ -1,3 +1,4 @@
+Drop database concesionario;
 Create database concesionario;
 Use concesionario;
 -- Creacion de tablas
@@ -48,13 +49,18 @@ CREATE TABLE Serie
  
  CREATE TABLE Historico
  (
-	id_historico  integer(10) NOT NULL,
-	id		integer(10) NOT NULL,
+	fecha_operacion date,
+	cod_historico  integer(10) NOT NULL auto_increment,
 	operacion		ENUM('Comprado', 'Pintado', 'Vendido'),
-    color_anterior  varchar(20),
-    color_posterior varchar(20),
-    fecha_modificacion date,
-    PRIMARY KEY (id_historico),
+    nuevo_color varchar(20),
+	id 			integer,
+	Matricula 		varchar(30),
+	NumBastidor 		varchar(30),
+	Color			varchar(15),
+	NumAsientos		int(2),
+	Precio			float,
+	numSerie			integer(10),
+    PRIMARY KEY (cod_historico),
     FOREIGN KEY (id) REFERENCES Vehiculos(id)
      ON DELETE CASCADE ON UPDATE CASCADE
  );
@@ -106,6 +112,5 @@ INSERT INTO Camion VALUES (11,15000, "P");
 INSERT INTO Camion VALUES (12,23000, "A");
 INSERT INTO Camion VALUES (13,16500, "P");
 
-INSERT INTO Historico VALUES (1,4,"Comprado");
 
 select * from vehiculos;
