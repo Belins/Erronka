@@ -25,7 +25,7 @@ String db = "users";
 String driver = "com.mysql.jdbc.Driver";
 try{
 Class.forName(driver);
-con = DriverManager.getConnection(url+db,"root","david1234");
+con = DriverManager.getConnection(url+db,"root","");
 try{
 Statement st = con.createStatement();
 String name=request.getParameter("name");

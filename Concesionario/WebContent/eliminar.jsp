@@ -1,9 +1,6 @@
-<%-- delete.java
-     Written By: Mr. Jake R. Pomperada, MAED-IT
-     Date : July 17, 2015, Friday
-     Tools: JSP and MySQL
-            mysql-connecter-java-5.1.13-bin.jar
-            netbeans ide 8.0.2
+<%-- JSP que confirma eliminación de vehiculo.
+		Hecho por:
+		Manex Arroitaonandia, David Belinchon y Aitor Ortiz de Zarate
 --%>
 
 <%@ page language="java" import="java.sql.*,java.util.*,java.text.*" %>
@@ -21,8 +18,8 @@ out.println("<style>  a,b {font-family: arial;"
 String strId =request.getParameter("id");
 int id = Integer.parseInt(strId);
 Connection con = null;
-String url = "jdbc:mysql://localhost:3306/";;
-String db = "users";
+String url = "jdbc:mysql://10.18.124.90:3306/";;
+String db = "concesionario";
 String driver = "com.mysql.jdbc.Driver";
 try{
 Class.forName(driver);
@@ -30,11 +27,11 @@ con = DriverManager.getConnection(url+db,"root","david1234");
 try{
 Statement st = con.createStatement();
 String name=request.getParameter("name");
-int in = st.executeUpdate("DELETE FROM student_info WHERE id='"+id+"'");
+int in = st.executeUpdate("DELETE FROM vehiculos WHERE id='"+id+"'");
 con.close();
-out.println("<p> The record is successfully deleted. </p>");
+out.println("<p> El vehiculo ha sido eleminado. </p>");
 out.println("<br>");
-out.println("<a href='list.jsp'> RETURN TO MAIN PAGE </a>");
+out.println("<a href='principal.jsp'> Volver a la pagina principal </a>");
 }
 catch (SQLException ex){
 System.out.println("SQL statement is not executed!");
