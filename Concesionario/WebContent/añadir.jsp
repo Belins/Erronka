@@ -55,7 +55,23 @@
 </tr>
 <tr>
 <td><b>NumSerie:</b></td>
-<td><input type="text" name="NumSerie" size="50"></td>
+<td><select name="serie">
+<option value="1">100</option>
+<option value="2">101</option>
+<option value="3">102</option>
+<option value="4">103</option>
+<option value="5">104</option>
+<option value="6">105</option>
+<option value="7">106</option>
+<option value="8">107</option>
+<option value="9">108</option>
+<option value="10">109</option>
+<option value="11">110</option>
+<option value="12">111</option>
+<option value="13">112</option>
+<option value="14">113</option>
+
+</select></td>
 </tr>
 </table>
 <p align="center"><input type="submit" value="Añadir" name="Submit"

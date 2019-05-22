@@ -4,7 +4,7 @@
 --%>
 <%@ page language="java" import="java.sql.*"%>
 
-<head><title>CONCESIONARIO MANOLI</title>
+<head><title>CONCESIONARIO AMD</title>
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -25,7 +25,7 @@
    table{
    		margin: auto;
    		margin-top: 5%;
-   		width: 920px;
+   		width: 1100px;
    		height:80px;
    		text-align:center;
    }
@@ -79,6 +79,7 @@
 <td bgColor="grey"><font color="white"><b>Nº ASIENTOS</b></font></td>
 <td bgColor="grey"><font color="white"><b>PRECIO</b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº SERIE</b></font></td>
+<td bgColor="grey"><font color="white"><b>STOCK</b></font></td>
 <td bgColor="grey"><font color="white"><b>EDITAR</b></font></td>
 <td bgColor="grey"><font color="white"><b>ELIMINAR</b></font></td>
 <%
@@ -97,6 +98,8 @@ while(rst.next()){
 
 
 %>
+
+
 <tr>
 <td bgColor="lightgrey"><%=rst.getString(1)%></td>
 <td bgColor="lightgrey"><%=rst.getString(2)%></td>
@@ -104,7 +107,9 @@ while(rst.next()){
 <td bgColor="lightgrey"><%=rst.getString(4)%></td>
 <td bgColor="lightgrey"><%=rst.getString(5)%></td>
 <td bgColor="lightgrey"><%=rst.getString(6)%> &euro;</td>
-<td bgColor="lightgrey"><%=rst.getString(7)%></td>
+<td bgColor="lightgrey">
+	<a href="serie.jsp?numSerie=<%=rst.getInt("numSerie")%>"><%=rst.getString(7)%></a></td>
+<td id="celda"><text id="stock"><%=rst.getString(8)%></text></td>	
 <td bgColor="lightgrey">
     <a href="editar.jsp?id=<%=rst.getInt("id")%>"> Editar </a></td>
 <td bgColor="lightgrey">

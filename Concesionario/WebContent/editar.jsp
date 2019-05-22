@@ -69,11 +69,8 @@ while (rs.next()) {
 <td width="50%"><b>Precio:</b></td>
 <td width="50%"><input type="text" name="Precio" value="<%=rs.getString("Precio")%>" size="50"></td>
 </tr>
-<tr>
-<td width="50%"><b>NumSerie:</b></td>
-<td width="50%"><input type="text" name="Color" value="<%=rs.getString("NumSerie")%>" size="50"></td>
-</tr>
 </table>
+<br>
 <p align="center"><input type="submit" value="Actualizar" name="submit"
 style="color: black;
  		font-size: 20px;

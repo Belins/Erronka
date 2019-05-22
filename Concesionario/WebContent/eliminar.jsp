@@ -26,16 +26,17 @@ Class.forName(driver);
 con = DriverManager.getConnection(url+db,"root","david1234");
 try{
 Statement st = con.createStatement();
-String name=request.getParameter("name");
-int in = st.executeUpdate("DELETE FROM vehiculos WHERE id='"+id+"'");
+String Stock=request.getParameter("Stock");
+int in = st.executeUpdate("UPDATE vehiculos SET Stock='No disponible'"+ "WHERE id='"+id+"'");
 con.close();
-out.println("<p> El vehiculo ha sido eleminado. </p>");
+out.println("<p> El vehiculo ya no esta disponible. </p>");
 out.println("<br>");
 out.println("<a href='principal.jsp'> Volver a la pagina principal </a>");
 }
 catch (SQLException ex){
-System.out.println("SQL statement is not executed!");
+System.out.println(ex.getMessage());
 }
+
 }
 catch (Exception e){
 e.printStackTrace();

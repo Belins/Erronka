@@ -24,7 +24,7 @@
        }
    table{
    		margin: auto;
-   		width: 1050px;
+   		width: 1100px;
    		height:80px;
    		text-align:center;
    }

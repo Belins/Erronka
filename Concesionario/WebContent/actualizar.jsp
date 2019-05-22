@@ -34,7 +34,7 @@ String NumSerie=request.getParameter("NumSerie");
 int in = st.executeUpdate("UPDATE vehiculos SET Matricula='"+Matricula+"'"
         + ",NumBastidor='"+NumBastidor+"',Color='"+Color+"' "
         + ",NumAsientos='"+NumAsientos+"',Precio='"+Precio+"' "
-        + ",NumSerie='"+NumSerie+"',WHERE id='"+id+"'");
+        + "WHERE id='"+id+"'");
 con.close();
 out.println("<p> El vehiculo " +"<b>"+ Matricula +"</b>" + " ha sido actualizado. </p>");
 out.println("<br>");
