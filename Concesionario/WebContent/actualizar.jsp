@@ -41,7 +41,7 @@ out.println("<br>");
 out.println("<a href='principal.jsp'> Volver a la pagina principal </a>");
 }
 catch (SQLException ex){
-System.out.println("SQL statement is not executed!");
+System.out.println(ex.getMessage());
 }
 }
 catch (Exception e){

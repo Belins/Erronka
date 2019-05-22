@@ -11,7 +11,7 @@
 <body>
 <style>
     body {
- 		background-image: url("ruedas.jpg");
+ 		background-image: url("coches.jpg");
  		background-repeat: no-repeat;
  		background-size: 100% 100%;
 	}
@@ -22,6 +22,7 @@
    	td{
    		width:50%;
    	}
+   
 </style>
 
 
@@ -57,11 +58,33 @@
 <td><input type="text" name="NumSerie" size="50"></td>
 </tr>
 </table>
-<p align="center"><input type="submit" value="Añadir" name="Submit">
-<input type="reset" value="Restablecer" name="Reset">
+<p align="center"><input type="submit" value="Añadir" name="Submit"
+style="color: black;
+ 		font-size: 20px;
+ 		font-weight: 500;
+ 		background: white;
+ 		border: 1px solid;
+ 		border-color: black;
+ 		position: relative;">
+<input type="reset" value="Restablecer" name="Reset"
+style="color: black;
+ 		font-size: 20px;
+ 		font-weight: 500;
+ 		background: white;
+ 		border: 1px solid;
+ 		border-color: black;
+ 		position: relative;">
 </form>
 <form method="get" action="principal.jsp">
-<input type="submit" value="Volver" />
+<input type="submit" value="Volver" 
+style="margin-left:11%; 
+		color: black;
+ 		font-size: 20px;
+ 		font-weight: 500;
+ 		background: white;
+ 		border: 1px solid;
+ 		border-color: black;
+ 		position: relative;"/>
 </form>
 </p>
 </td>

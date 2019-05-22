@@ -11,7 +11,7 @@
 </head>
 <style>
  body {
- 		background-image: url("ruedas.jpg");
+ 		background-image: url("coches.jpg");
  		background-repeat: no-repeat;
  		background-size: 100% 100%;
 	}
@@ -19,6 +19,7 @@
 		margin: auto;
    		background-color: lightgrey;
    }
+   
 </style>
 <body>
 
@@ -34,7 +35,7 @@ Class.forName(driver);
 con = DriverManager.getConnection(url+db,"root","david1234");
 try{
 Statement st = con.createStatement();
-String query = "SELECT Matricula, NumBastidor, Color, NumAsientos, Precio, NumSerie FROM vehiculos WHERE id="+id;
+String query = "SELECT Matricula, NumBastidor, Color, NumAsientos, Precio, NumSerie FROM vehiculos WHERE id='"+id+"'";
 ResultSet rs = st.executeQuery(query);
 while (rs.next()) {
 %>
@@ -73,11 +74,33 @@ while (rs.next()) {
 <td width="50%"><input type="text" name="Color" value="<%=rs.getString("NumSerie")%>" size="50"></td>
 </tr>
 </table>
-<p align="center"><input type="submit" value="Actualizar" name="submit">
-<input type="reset" value="Resetear" name="reset">
+<p align="center"><input type="submit" value="Actualizar" name="submit"
+style="color: black;
+ 		font-size: 20px;
+ 		font-weight: 500;
+ 		background: white;
+ 		border: 1px solid;
+ 		border-color: black;
+ 		position: relative;">
+<input type="reset" value="Resetear" name="reset"
+style="color: black;
+ 		font-size: 20px;
+ 		font-weight: 500;
+ 		background: white;
+ 		border: 1px solid;
+ 		border-color: black;
+ 		position: relative;">
 </form>
 <form method="get" action="principal.jsp">
-<input type="submit" value="Volver" />
+<input type="submit" value="Volver" 
+style="margin-left:11%;
+color: black;
+ 		font-size: 20px;
+ 		font-weight: 500;
+ 		background: white;
+ 		border: 1px solid;
+ 		border-color: black;
+ 		position: relative"/>
 </form>
 </p>
 </td>
