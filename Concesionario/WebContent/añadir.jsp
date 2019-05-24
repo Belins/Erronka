@@ -32,48 +32,36 @@
 <form method="POST" action="guardar.jsp">
 
 <h2 align="center">AÑADIR VEHICULO</h2>
-<table  width="15%">
-<tr>
-<td><b>Matricula:</b></td>
-<td><input type="text" name="Matricula" size="50"/> </td>
-</tr>
-<tr>
-<td><b>Bastidor:</b></td>
-<td><input type="text" name="NumBastidor" size="50"></td>
-</tr>
-<tr>
-<td><b>Color:</b></td>
-<td><input type="text" name="Color" size="50"></td>
-</tr>
-<tr>
-<td><b>NumAsientos:</b></td>
-<td><input type="text" name="NumAsientos" size="50"></td>
-</tr>
-<tr>
-<td><b>Precio:</b></td>
-<td><input type="text" name="Precio" size="50"></td>
-</tr>
-<tr>
-<td><b>NumSerie:</b></td>
-<td><select name="serie">
-<option value="1">100</option>
-<option value="2">101</option>
-<option value="3">102</option>
-<option value="4">103</option>
-<option value="5">104</option>
-<option value="6">105</option>
-<option value="7">106</option>
-<option value="8">107</option>
-<option value="9">108</option>
-<option value="10">109</option>
-<option value="11">110</option>
-<option value="12">111</option>
-<option value="13">112</option>
-<option value="14">113</option>
-
-</select></td>
-</tr>
-</table>
+		
+		<table  width="15%">
+			<tr>
+			<td><b>Matricula:</b></td>
+			<td><input type="text" name="Matricula" size="50"/> </td>
+			</tr>
+			<tr>
+			<td><b>Bastidor:</b></td>
+			<td><input type="text" name="NumBastidor" size="50"></td>
+			</tr>
+			<tr>
+			<td><b>Color:</b></td>
+			<td><input type="text" name="Color" size="50"></td>
+			</tr>
+			<tr>
+			<td><b>NumAsientos:</b></td>
+			<td><input type="text" name="NumAsientos" size="50"></td>
+			</tr>
+			<tr>
+			<td><b>Precio:</b></td>
+			<td><input type="text" name="Precio" size="50"></td>
+			</tr>
+			<tr>
+			<td><b>NumSerie:</b></td>
+			<td><input type="text" name="NumSerie" size="50"></td>
+			</tr>
+		
+		</table>
+		
+		
 <p align="center"><input type="submit" value="Añadir" name="Submit"
 style="color: black;
  		font-size: 20px;

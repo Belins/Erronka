@@ -19,6 +19,15 @@
 		margin: auto;
    		background-color: lightgrey;
    }
+   #pint {
+   background-image: url("spray.jpg");
+ 		background-repeat: no-repeat;
+ 		background-size: 100% 100%;
+   }
+   #pint2 {
+   background-color:black;
+   color: white;
+   }
    
 </style>
 <body>
@@ -27,7 +36,7 @@
 String strId =request.getParameter("id");
 int id = Integer.parseInt(strId);
 Connection con = null;
-String url = "jdbc:mysql://10.18.124.90:3306/";;
+String url = "jdbc:mysql://10.18.124.91:3306/";;
 String db = "concesionario";
 String driver = "com.mysql.jdbc.Driver";
 try{
@@ -35,43 +44,32 @@ Class.forName(driver);
 con = DriverManager.getConnection(url+db,"root","david1234");
 try{
 Statement st = con.createStatement();
-String query = "SELECT Matricula, NumBastidor, Color, NumAsientos, Precio, NumSerie FROM vehiculos WHERE id='"+id+"'";
+String query = "SELECT  Color FROM vehiculos WHERE id='"+id+"'";
 ResultSet rs = st.executeQuery(query);
 while (rs.next()) {
 %>
 
 
-<table border="1" width="50%">
+<table id="pint" border="1" width="50%">
 <tr>
 <td width="100%">
 <form method="POST" action="actualizar.jsp">
 <input type="hidden" name="id" value="<%=request.getParameter("id")%>">
-<h2 align="center">ACTUALIZAR VEHICULO</h2>
+<h2 align="center">PINTAR VEHICULO</h2>
 <table  width="15%" >
 
-<tr>
-<td width="50%"><b>Matricula:</b></td>
-<td width="50%"><input type="text" name="Matricula" value="<%=rs.getString("Matricula")%>" size="50"/> </td>
-</tr>
-<tr>
-<td width="50%"><b>NumBastidor:</b></td>
-<td width="50%"><input type="text" name="NumBastidor" value="<%=rs.getString("NumBastidor")%>" size="50"></td>
-</tr>
-<tr>
+
+<tr id="pint2">
 <td width="50%"><b>Color:</b></td>
-<td width="50%"><input type="text" name="Color" value="<%=rs.getString("Color")%>" size="50"></td>
+<td width="50%"><input type="text" name="Color" value="<%=rs.getString("Color")%>" size="5" readonly></td>
+<td width="50%"><b>Nuevo_color:</b></td>
+<td width="50%"><input type="text" name="nuevo_color" value="" size="30"></td>
 </tr>
-<tr>
-<td width="50%"><b>NumAsientos:</b></td>
-<td width="50%"><input type="text" name="NumAsientos" value="<%=rs.getString("NumAsientos")%>" size="50"/> </td>
-</tr>
-<tr>
-<td width="50%"><b>Precio:</b></td>
-<td width="50%"><input type="text" name="Precio" value="<%=rs.getString("Precio")%>" size="50"></td>
-</tr>
+
+
 </table>
 <br>
-<p align="center"><input type="submit" value="Actualizar" name="submit"
+<p align="center"><input type="submit" value="Pintar" name="submit"
 style="color: black;
  		font-size: 20px;
  		font-weight: 500;

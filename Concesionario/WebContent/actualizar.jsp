@@ -17,7 +17,7 @@ out.println("<style>  a,b {font-family: arial;"
 String strId =request.getParameter("id");
 int id = Integer.parseInt(strId);
 Connection con = null;
-String url = "jdbc:mysql://10.18.124.90:3306/";;
+String url = "jdbc:mysql://10.18.124.91:3306/";;
 String db = "concesionario";
 String driver = "com.mysql.jdbc.Driver";
 try{
@@ -25,18 +25,12 @@ Class.forName(driver);
 con = DriverManager.getConnection(url+db,"root","david1234");
 try{
 Statement st = con.createStatement();
-String Matricula=request.getParameter("Matricula");
-String NumBastidor=request.getParameter("NumBastidor");
-String Color=request.getParameter("Color");
-String NumAsientos=request.getParameter("NumAsientos");
-String Precio=request.getParameter("Precio");
-String NumSerie=request.getParameter("NumSerie");
-int in = st.executeUpdate("UPDATE vehiculos SET Matricula='"+Matricula+"'"
-        + ",NumBastidor='"+NumBastidor+"',Color='"+Color+"' "
-        + ",NumAsientos='"+NumAsientos+"',Precio='"+Precio+"' "
-        + "WHERE id='"+id+"'");
+
+String nuevo_color=request.getParameter("nuevo_color");
+
+int in = st.executeUpdate("UPDATE vehiculos SET Color='"+nuevo_color+"' WHERE id='"+id+"'");
 con.close();
-out.println("<p> El vehiculo " +"<b>"+ Matricula +"</b>" + " ha sido actualizado. </p>");
+out.println("<p> El vehiculo  ha sido actualizado. </p>");
 out.println("<br>");
 out.println("<a href='principal.jsp'> Volver a la pagina principal </a>");
 }

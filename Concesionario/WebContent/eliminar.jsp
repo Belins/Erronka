@@ -18,7 +18,7 @@ out.println("<style>  a,b {font-family: arial;"
 String strId =request.getParameter("id");
 int id = Integer.parseInt(strId);
 Connection con = null;
-String url = "jdbc:mysql://10.18.124.90:3306/";;
+String url = "jdbc:mysql://10.18.124.91:3306/";;
 String db = "concesionario";
 String driver = "com.mysql.jdbc.Driver";
 try{
@@ -27,7 +27,7 @@ con = DriverManager.getConnection(url+db,"root","david1234");
 try{
 Statement st = con.createStatement();
 String Stock=request.getParameter("Stock");
-int in = st.executeUpdate("UPDATE vehiculos SET Stock='No disponible'"+ "WHERE id='"+id+"'");
+int in = st.executeUpdate("DELETE from vehiculos WHERE id='"+id+"'");
 con.close();
 out.println("<p> El vehiculo ya no esta disponible. </p>");
 out.println("<br>");
@@ -42,3 +42,4 @@ catch (Exception e){
 e.printStackTrace();
 }
 %>
+

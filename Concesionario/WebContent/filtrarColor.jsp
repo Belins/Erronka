@@ -1,10 +1,10 @@
-<%-- JSP historial del concesionario.
+<%-- JSP principal del concesionario.
 		Hecho por:
 		Manex Arroitaonandia, David Belinchon y Aitor Ortiz de Zarate
 --%>
 <%@ page language="java" import="java.sql.*"%>
 
-<head><title>HISTORIAL</title>
+<head><title>CONCESIONARIO AMD</title>
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -19,11 +19,12 @@
         color:black;
         border: solid black 2px;
         background-color:white;
-        width:30%;
+        width:40%;
        
        }
    table{
    		margin: auto;
+   		margin-top: 5%;
    		width: 1100px;
    		height:80px;
    		text-align:center;
@@ -56,22 +57,21 @@
 <div align="center">
     <br>
   
-    <h1>HISTORIAL</h1>
+    <h1>CONCESIONARIO A.M.D</h1>
   
     <br>
     <div align="left">
 
-<form method="get" action="principal.jsp" style="margin-left:10%">
-<input type="submit" value="VOLVER" />
+<form method="get" action="añadir.jsp" style="margin-left:12.65%; float: left">
+<input type="submit" value="AÑADIR" />
+</form>
+
+<form method="get" action="historico.jsp" style="margin-right:12.65%; float: right">
+<input type="submit" value="HISTORIAL" />
 </form>
 <br>
-<table cellPadding="0" cellSpacing="0">
+<table id ="table" cellPadding="0" cellSpacing="0">
 <tbody>
-
-<td bgColor="grey"><font color="white"><b>FECHA</b></font></td>
-<td bgColor="grey"><font color="white"><b>COD.HISTORICO</b></font></td>
-<td bgColor="grey"><font color="white"><b>OPERACION</b></font></td>
-<td bgColor="grey"><font color="white"><b>NUEVO COLOR</b></font></td>
 <td bgColor="grey"><font color="white"><b>CODIGO</b></font></td>
 <td bgColor="grey"><font color="white"><b>MATRICULA</b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº BASTIDOR</b></font></td>
@@ -79,6 +79,9 @@
 <td bgColor="grey"><font color="white"><b>Nº ASIENTOS</b></font></td>
 <td bgColor="grey"><font color="white"><b>PRECIO</b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº SERIE</b></font></td>
+<td bgColor="grey"><font color="white"><b>STOCK</b></font></td>
+<td bgColor="grey"><font color="white"><b>PINTAR</b></font></td>
+<td bgColor="grey"><font color="white"><b>ELIMINAR</b></font></td>
 <%
 String DRIVER = "com.mysql.jdbc.Driver";
 Class.forName(DRIVER).newInstance();
@@ -90,23 +93,27 @@ try{
 
 con=DriverManager.getConnection("jdbc:mysql://10.18.124.91:3306/concesionario","root","david1234");
 stmt=con.createStatement();
-rst=stmt.executeQuery("SELECT * FROM historico");
+rst=stmt.executeQuery("SELECT * FROM vehiculos ORDER BY color");
 while(rst.next()){
 
 
 %>
+
+
 <tr>
 <td bgColor="lightgrey"><%=rst.getString(1)%></td>
 <td bgColor="lightgrey"><%=rst.getString(2)%></td>
 <td bgColor="lightgrey"><%=rst.getString(3)%></td>
 <td bgColor="lightgrey"><%=rst.getString(4)%></td>
 <td bgColor="lightgrey"><%=rst.getString(5)%></td>
-<td bgColor="lightgrey"><%=rst.getString(6)%></td>
-<td bgColor="lightgrey"><%=rst.getString(7)%></td>
-<td bgColor="lightgrey"><%=rst.getString(8)%></td>
-<td bgColor="lightgrey"><%=rst.getString(9)%></td>
-<td bgColor="lightgrey"><%=rst.getString(10)%> &euro;</td>
-<td bgColor="lightgrey"><%=rst.getString(11)%></td>
+<td bgColor="lightgrey"><%=rst.getString(6)%> &euro;</td>
+<td bgColor="lightgrey">
+	<a href="serie.jsp?numSerie=<%=rst.getInt("numSerie")%>"><%=rst.getString(7)%></a></td>
+<td bgColor="lightgrey"><%=rst.getString(8)%></td>	
+<td bgColor="lightgrey">
+    <a href="editar.jsp?id=<%=rst.getInt("id")%>"> Pintar </a></td>
+<td bgColor="lightgrey">
+    <a href="eliminar.jsp?id=<%=rst.getInt("id")%>"> Eliminar </a></td>
 </tr>
 <%
 }
@@ -122,3 +129,5 @@ System.out.println(e.getMessage());
 </center>
 </div>
 </body>
+
+

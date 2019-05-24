@@ -15,7 +15,7 @@ out.println("<style>  a,b {font-family: arial;"
 %>
 <%
 Connection con = null;
-String url = "jdbc:mysql://10.18.124.90:3306/";;
+String url = "jdbc:mysql://10.18.124.91:3306/";;
 String db = "concesionario";
 String driver = "com.mysql.jdbc.Driver";
 try{
@@ -31,7 +31,7 @@ String Precio=request.getParameter("Precio");
 String NumSerie=request.getParameter("NumSerie");
 
 int val = st.executeUpdate("INSERT vehiculos "
-        + "VALUES(id,'"+Matricula+"','"+NumBastidor+"','"+Color+"','"+NumAsientos+"','"+Precio+"' ,'"+NumSerie+"')");
+        + "VALUES(id,'"+Matricula+"','"+NumBastidor+"','"+Color+"','"+NumAsientos+"','"+Precio+"' ,'"+NumSerie+"','En stock')");
 
 con.close();
 out.println("<p> El vehiculo con matricula: " +"<b>"+ Matricula +"</b>" + " ha sido añadido. </p>");
@@ -39,7 +39,7 @@ out.println("<br>");
 out.println("<a href='principal.jsp'> Volver a la pagina principal </a>");
 }
 catch (SQLException ex){
-System.out.println("SQL statement is not executed!");
+System.out.println(ex.getMessage());
 }
 }
 catch (Exception e){

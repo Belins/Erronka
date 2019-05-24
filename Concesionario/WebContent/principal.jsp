@@ -70,17 +70,17 @@
 <input type="submit" value="HISTORIAL" />
 </form>
 <br>
-<table cellPadding="0" cellSpacing="0">
+<table id ="table" cellPadding="0" cellSpacing="0">
 <tbody>
 <td bgColor="grey"><font color="white"><b>CODIGO</b></font></td>
 <td bgColor="grey"><font color="white"><b>MATRICULA</b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº BASTIDOR</b></font></td>
-<td bgColor="grey"><font color="white"><b>COLOR</b></font></td>
+<td bgColor="grey"><font color="white"><b><a href="filtrarColor.jsp" text-decoration= "none" color="black"> COLOR </a></b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº ASIENTOS</b></font></td>
 <td bgColor="grey"><font color="white"><b>PRECIO</b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº SERIE</b></font></td>
 <td bgColor="grey"><font color="white"><b>STOCK</b></font></td>
-<td bgColor="grey"><font color="white"><b>EDITAR</b></font></td>
+<td bgColor="grey"><font color="white"><b>PINTAR</b></font></td>
 <td bgColor="grey"><font color="white"><b>ELIMINAR</b></font></td>
 <%
 String DRIVER = "com.mysql.jdbc.Driver";
@@ -91,7 +91,7 @@ Statement stmt=null;
 try{
   
 
-con=DriverManager.getConnection("jdbc:mysql://10.18.124.90:3306/concesionario","root","david1234");
+con=DriverManager.getConnection("jdbc:mysql://10.18.124.91:3306/concesionario","root","david1234");
 stmt=con.createStatement();
 rst=stmt.executeQuery("SELECT * FROM vehiculos");
 while(rst.next()){
@@ -109,9 +109,9 @@ while(rst.next()){
 <td bgColor="lightgrey"><%=rst.getString(6)%> &euro;</td>
 <td bgColor="lightgrey">
 	<a href="serie.jsp?numSerie=<%=rst.getInt("numSerie")%>"><%=rst.getString(7)%></a></td>
-<td id="celda"><text id="stock"><%=rst.getString(8)%></text></td>	
+<td bgColor="lightgrey"><%=rst.getString(8)%></td>	
 <td bgColor="lightgrey">
-    <a href="editar.jsp?id=<%=rst.getInt("id")%>"> Editar </a></td>
+    <a href="editar.jsp?id=<%=rst.getInt("id")%>"> Pintar </a></td>
 <td bgColor="lightgrey">
     <a href="eliminar.jsp?id=<%=rst.getInt("id")%>"> Eliminar </a></td>
 </tr>
@@ -129,3 +129,5 @@ System.out.println(e.getMessage());
 </center>
 </div>
 </body>
+
+
