@@ -10,11 +10,22 @@ delimiter ;
 
 delimiter $$
 CREATE TRIGGER concesionario.venta
-before DELETE ON vehiculos
+before delete ON vehiculos
 FOR EACH ROW
 BEGIN
+
   INSERT INTO historico (fecha_operacion, operacion, id, Matricula, NumBastidor, Color, NumAsientos, Precio, numSerie)
-      values (NOW(), "Vendido", old.Matricula, old.id, old.NumBastidor, old.Color, old.NumAsientos, old.Precio, old.numSerie);
+      values (NOW(), "Vendido", old.id, old.Matricula, old.NumBastidor, old.Color, old.NumAsientos, old.Precio, old.numSerie);
+END$$
+delimiter ;
+
+delimiter $$
+CREATE TRIGGER concesionario.pintado
+before update on vehiculos
+FOR EACH ROW
+BEGIN 
+	INSERT INTO historico (fecha_operacion, operacion, nuevo_color, id, Matricula, NumBastidor, Color, NumAsientos, Precio, numSerie)
+    values (NOW(), "Pintado", new.color, old.id, old.Matricula, old.NumBastidor, old.Color, old.NumAsientos, old.Precio, old.numSerie);
 END$$
 delimiter ;
 

@@ -1,3 +1,4 @@
+
 Drop database concesionario;
 Create database concesionario;
 Use concesionario;
@@ -20,6 +21,7 @@ CREATE TABLE Serie
    NumAsientos		int(2),
    Precio			float,
    numSerie			integer(10),
+   stock			varchar(20) default 'En stock',
    PRIMARY KEY (id),
    FOREIGN KEY (numSerie) REFERENCES Serie(numSerie)
    ON DELETE CASCADE ON UPDATE CASCADE
@@ -60,9 +62,7 @@ CREATE TABLE Serie
 	NumAsientos		int(2),
 	Precio			float,
 	numSerie			integer(10),
-    PRIMARY KEY (cod_historico),
-    FOREIGN KEY (id) REFERENCES Vehiculos(id)
-     ON DELETE CASCADE ON UPDATE CASCADE
+    PRIMARY KEY (cod_historico)
  );
  
 
@@ -83,19 +83,19 @@ INSERT INTO Serie VALUES (112, "Ford", "Sierra", 1992);
 INSERT INTO Serie VALUES (113, "Mercedes", "Actros", 2007);
 INSERT INTO Serie VALUES (114, "Ford", "Cargo", 2002);
 
-INSERT INTO Vehiculos VALUES (1, "1966 YUD", "1GCNKSEA7DZ285987", "Azul", 5, 3000, 103);
-INSERT INTO Vehiculos VALUES (2,"8691 GUM", "JH4CU2F52DC837058", "Rojo", 5, 2500, 101);
-INSERT INTO Vehiculos VALUES (3,"8972 FSR", "JF2SHCEC7DH478396", "Verde", 5, 1500, 105);
-INSERT INTO Vehiculos VALUES (4,"5683 FUD", "JY4AJ38W89C067483", "Blanco", 5, 3500, 106);
-INSERT INTO Vehiculos VALUES (5,"4428 QTI", "1GBGC24U51Z377830", "Rojo", 5, 2000, 112);
-INSERT INTO Vehiculos VALUES (6,"0001 MHK", "1XKDDU8X76J111330", "Negro", 5, 3000, 110);
-INSERT INTO Vehiculos VALUES (7,"1529 MAU", "1FUYFDYB2YDF16875", "Amarillo", 5, 1200, 108);
-INSERT INTO Vehiculos VALUES (8,"7579 WUI", "2GCEC19W011424794", "Azul", 2, 4000, 109);
-INSERT INTO Vehiculos VALUES (9,"8781 JGF", "2C4GP74L41R485497", "Gris", 5, 4000, 100);
-INSERT INTO Vehiculos VALUES (10,"6086 UAW", "JS2RC62H465339589", "Gris", 3, 10000, 113);
-INSERT INTO Vehiculos VALUES (11,"0358 XDX", "ZFFXC26A0H0003270", "Blanco", 3, 14000, 114);
-INSERT INTO Vehiculos VALUES (12,"3856 SBD", "KM8SC73D35U810516", "Negro", 4, 20000, 114);
-INSERT INTO Vehiculos VALUES (13,"0478 VNI", "4V4MC9GF47N419977", "Blanco", 5, 18000, 113);
+INSERT INTO Vehiculos VALUES (1, "1966 YUD", "1GCNKSEA7DZ285987", "Azul", 5, 3000, 103,"En stock");
+INSERT INTO Vehiculos VALUES (2,"8691 GUM", "JH4CU2F52DC837058", "Rojo", 5, 2500, 101,"En stock");
+INSERT INTO Vehiculos VALUES (3,"8972 FSR", "JF2SHCEC7DH478396", "Verde", 5, 1500, 105,"En stock");
+INSERT INTO Vehiculos VALUES (4,"5683 FUD", "JY4AJ38W89C067483", "Blanco", 5, 3500, 106,"En stock");
+INSERT INTO Vehiculos VALUES (5,"4428 QTI", "1GBGC24U51Z377830", "Rojo", 5, 2000, 112,"En stock");
+INSERT INTO Vehiculos VALUES (6,"0001 MHK", "1XKDDU8X76J111330", "Negro", 5, 3000, 110,"En stock");
+INSERT INTO Vehiculos VALUES (7,"1529 MAU", "1FUYFDYB2YDF16875", "Amarillo", 5, 1200, 108,"En stock");
+INSERT INTO Vehiculos VALUES (8,"7579 WUI", "2GCEC19W011424794", "Azul", 2, 4000, 109,"En stock");
+INSERT INTO Vehiculos VALUES (9,"8781 JGF", "2C4GP74L41R485497", "Gris", 5, 4000, 100,"En stock");
+INSERT INTO Vehiculos VALUES (10,"6086 UAW", "JS2RC62H465339589", "Gris", 3, 10000, 113,"En stock");
+INSERT INTO Vehiculos VALUES (11,"0358 XDX", "ZFFXC26A0H0003270", "Blanco", 3, 14000, 114,"En stock");
+INSERT INTO Vehiculos VALUES (12,"3856 SBD", "KM8SC73D35U810516", "Negro", 4, 20000, 114,"En stock");
+INSERT INTO Vehiculos VALUES (13,"0478 VNI", "4V4MC9GF47N419977", "Blanco", 5, 18000, 113,"En stock");
 
 INSERT INTO Coche VALUES (1,3, 500);
 INSERT INTO Coche VALUES (2,3, 800);
@@ -114,3 +114,4 @@ INSERT INTO Camion VALUES (13,16500, "P");
 
 
 select * from vehiculos;
+select * from historico;
