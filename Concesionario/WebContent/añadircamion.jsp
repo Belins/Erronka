@@ -29,9 +29,9 @@
 <table border="1" width="50%">
 <tr>
 <td>
-<form method="POST" action="guardar.jsp">
+<form method="POST" action="guardarcamion.jsp">
 
-<h2 align="center">AÑADIR VEHICULO</h2>
+<h2 align="center">AÑADIR CAMION</h2>
 		
 		<table  width="15%">
 			<tr>
@@ -58,6 +58,13 @@
 			<td><b>NumSerie:</b></td>
 			<td><input type="text" name="NumSerie" size="50"></td>
 			</tr>
+			<td><b>Carga:</b></td>
+			<td><input type="text" name="carga" size="50"></td>
+			</tr>
+			<td><b>Tipo de Mercancia</b></td>
+			<td><input type="text" name="tipoMercancia" size="50"></td>
+			</tr>
+		
 		
 		</table>
 		

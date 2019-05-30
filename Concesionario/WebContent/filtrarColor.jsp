@@ -49,6 +49,8 @@
  		background: black;
   		color: white;
 }
+
+	
    
 </style>    
 
@@ -75,13 +77,13 @@
 <td bgColor="grey"><font color="white"><b>CODIGO</b></font></td>
 <td bgColor="grey"><font color="white"><b>MATRICULA</b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº BASTIDOR</b></font></td>
-<td bgColor="grey"><font color="white"><b>COLOR</b></font></td>
+<td bgColor="grey" ><font color="white"><b><a href="principal.jsp" text-decoration= "none" color="black"> COLOR </a></b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº ASIENTOS</b></font></td>
 <td bgColor="grey"><font color="white"><b>PRECIO</b></font></td>
 <td bgColor="grey"><font color="white"><b>Nº SERIE</b></font></td>
 <td bgColor="grey"><font color="white"><b>STOCK</b></font></td>
 <td bgColor="grey"><font color="white"><b>PINTAR</b></font></td>
-<td bgColor="grey"><font color="white"><b>ELIMINAR</b></font></td>
+<td bgColor="grey"><font color="white"><b>VENDER</b></font></td>
 <%
 String DRIVER = "com.mysql.jdbc.Driver";
 Class.forName(DRIVER).newInstance();
@@ -102,7 +104,7 @@ while(rst.next()){
 
 <tr>
 <td bgColor="lightgrey"><%=rst.getString(1)%></td>
-<td bgColor="lightgrey"><%=rst.getString(2)%></td>
+<td bgColor="lightgrey"><a href="datos.jsp?id=<%=rst.getInt("id")%>"><%=rst.getString(2)%></a></td>
 <td bgColor="lightgrey"><%=rst.getString(3)%></td>
 <td bgColor="lightgrey"><%=rst.getString(4)%></td>
 <td bgColor="lightgrey"><%=rst.getString(5)%></td>
@@ -113,7 +115,7 @@ while(rst.next()){
 <td bgColor="lightgrey">
     <a href="editar.jsp?id=<%=rst.getInt("id")%>"> Pintar </a></td>
 <td bgColor="lightgrey">
-    <a href="eliminar.jsp?id=<%=rst.getInt("id")%>"> Eliminar </a></td>
+    <a href="eliminar.jsp?id=<%=rst.getInt("id")%>"> Vender </a></td>
 </tr>
 <%
 }
@@ -129,5 +131,3 @@ System.out.println(e.getMessage());
 </center>
 </div>
 </body>
-
-
