@@ -117,4 +117,4 @@ select * from serie;
 select * from historico;
 select co.id, numPuertas, capacidadMaletero, carga, tipoMercancia
 FROM coche co, camion ca;
-select * from vehiculos;
+select * from coche;

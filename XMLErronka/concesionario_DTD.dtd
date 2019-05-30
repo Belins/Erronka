@@ -1,0 +1,24 @@
+<!ELEMENT concesionario (series,vehiculos)>
+<!ELEMENT series (serie+)>
+    <!ELEMENT serie (marca,modelo,año_fabricacion)>
+          <!ATTLIST serie num CDATA #REQUIRED>
+          <!ELEMENT marca (#PCDATA)>
+          <!ELEMENT modelo (#PCDATA)>
+          <!ELEMENT año_fabricacion (#PCDATA)>
+<!ELEMENT vehiculos (vehiculo+)>
+<!ELEMENT vehiculo (clase+, matricula, NumBastidor, Color, NumAsientos, Precio, numSerie, stock)>
+        <!ATTLIST vehiculo id CDATA #REQUIRED>
+        <!ELEMENT clase (numPuertas | capacidadMaletero | carga | tipoMercancia)>
+              <!ATTLIST clase  tipo CDATA #REQUIRED>
+              <!ELEMENT numPuertas (#PCDATA)>
+              <!ELEMENT capacidadMaletero (#PCDATA)>
+              <!ELEMENT carga (#PCDATA)>
+              <!ELEMENT tipoMercancia (#PCDATA)>
+        <!ELEMENT matricula (#PCDATA)>
+        <!ELEMENT NumBastidor (#PCDATA)>
+        <!ELEMENT Color (#PCDATA)>
+        <!ELEMENT NumAsientos (#PCDATA)>
+        <!ELEMENT Precio (#PCDATA)>
+        <!ELEMENT numSerie EMPTY>
+            <!ATTLIST numSerie num CDATA #REQUIRED>
+        <!ELEMENT stock (#PCDATA)>

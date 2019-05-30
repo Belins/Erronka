@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concesionario SYSTEM "concesionario_dtd.dtd">
+<concesionario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="concesionario.xsd">
+<series>
+    <serie num="103">
+        <marca>Seat</marca>
+        <modelo>Ibiza</modelo>
+        <año_fabricacion>2009</año_fabricacion>
+    </serie>
+        <serie num="106">
+        <marca>Honda</marca>
+        <modelo>Civic</modelo>
+        <año_fabricacion>1996</año_fabricacion>
+    </serie>
+        <serie num="108">
+        <marca>Opel</marca>
+        <modelo>Astra</modelo>
+        <año_fabricacion>2003</año_fabricacion>
+    </serie>
+        <serie num="109">
+        <marca>Opel</marca>
+        <modelo>Kadett</modelo>
+        <año_fabricacion>1993</año_fabricacion>
+    </serie>
+        <serie num="113">
+        <marca>Mercedes</marca>
+        <modelo>Actros</modelo>
+        <año_fabricacion>2007</año_fabricacion>
+    </serie>
+</series>
+<vehiculos>
+<vehiculo id="1">
+        <clase tipo="coche">
+                  <numPuertas>3</numPuertas>
+                  <capacidadMaletero>500</capacidadMaletero>
+        </clase>
+        <matricula>1966 YUD</matricula>
+        <NumBastidor>1GCNKSEA7DZ285987</NumBastidor>
+        <Color>Azul</Color>
+        <NumAsientos>5</NumAsientos>
+        <Precio>3000</Precio>
+        <numSerie num="103"/>
+        <stock>En stock</stock>
+</vehiculo>
+
+<vehiculo id="4">
+        <clase tipo="coche">
+                  <numPuertas>3</numPuertas>
+                  <capacidadMaletero>600</capacidadMaletero>
+        </clase>
+        <matricula>5683 FUD</matricula>
+        <NumBastidor>JY4AJ38W89C067483</NumBastidor>
+        <Color>Blanco</Color>
+        <NumAsientos>5</NumAsientos>
+        <Precio>3500</Precio>
+        <numSerie num="106"/>
+        <stock>En stock</stock>
+</vehiculo>
+
+<vehiculo id="7">
+        <clase tipo="coche">
+                  <numPuertas>3</numPuertas>
+                  <capacidadMaletero>550</capacidadMaletero>
+        </clase>
+        <matricula>1529 MAU</matricula>
+        <NumBastidor>1FUYFDYB2YDF16875</NumBastidor>
+        <Color>Amarillo</Color>
+        <NumAsientos>5</NumAsientos>
+        <Precio>1200</Precio>
+        <numSerie num="108"/>
+        <stock>En stock</stock>
+</vehiculo>
+
+<vehiculo id="8">
+        <clase tipo="coche">
+                  <numPuertas>3</numPuertas>
+                  <capacidadMaletero>700</capacidadMaletero>
+        </clase>
+        <matricula>7579 WUI</matricula>
+        <NumBastidor>2GCEC19W011424794</NumBastidor>
+        <Color>Azul</Color>
+        <NumAsientos>2</NumAsientos>
+        <Precio>4000</Precio>
+        <numSerie num="109"/>
+        <stock>En stock</stock>
+</vehiculo>
+
+<vehiculo id="13">
+        <clase tipo="camion">
+                  <carga>16500</carga>
+                  <tipoMercancia>P</tipoMercancia>
+        </clase>
+        <matricula>0478 VNI</matricula>
+        <NumBastidor>4V4MC9GF47N419977</NumBastidor>
+        <Color>Blanco</Color>
+        <NumAsientos>2</NumAsientos>
+        <Precio>18000</Precio>
+        <numSerie num="113"/>
+        <stock>En stock</stock>
+</vehiculo>
+</vehiculos>
+
+</concesionario>

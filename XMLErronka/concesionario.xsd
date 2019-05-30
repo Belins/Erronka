@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="concesionario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="series">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="serie">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="marca" type="xs:string"/>
+                    <xs:element name="modelo" type="xs:string"/>
+                    <xs:element name="año_fabricacion" type="xs:int"/>
+                  </xs:sequence>
+                  <xs:attribute name="num" type="xs:int" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vehiculos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="vehiculo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="clase">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="carga" type="xs:int"/>
+                          <xs:element minOccurs="0" name="numPuertas" type="xs:int"/>
+                          <xs:element minOccurs="0" name="capacidadMaletero" type="xs:string"/>
+                          <xs:element minOccurs="0" name="tipoMercancia" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="tipo" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="matricula" type="xs:string"/>
+                    <xs:element name="NumBastidor" type="xs:string"/>
+                    <xs:element name="Color" type="xs:string"/>
+                    <xs:element name="NumAsientos" type="xs:int"/>
+                    <xs:element name="Precio" type="xs:decimal"/>
+                    <xs:element name="numSerie">
+                      <xs:complexType>
+                        <xs:attribute name="num" type="xs:int" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="stock" type="xs:string"/>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:int" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
